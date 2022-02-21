@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        Joe's Hotdogs
+        <title>Joe's Hotdogs</title>
         <!-- <link rel="stylesheet" href="styles.css"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <h1>Joe's Hotdog Stand</h1>
+        <h2>Your order:</h2>
         <script language="javascript">
             let num_hotdogs = parseInt(prompt("How many hotdogs do you want?" , "0"));
             let num_fries = parseInt(prompt("How many orders of fries do you want?" , "0"));
@@ -24,21 +26,21 @@
             total = total + tax;
 
             if (num_hotdogs != 0){
-                document.write("Hotdog x $" + num_hotdogs + ": $" + num_hotdogs * 3.75);
+                document.write("Hotdog x $" + num_hotdogs + ": $" + (num_hotdogs * 3.75).toFixed(2) + "</br>");
             }
             if (num_fries != 0){
-                document.write("Fries x $" + num_fries + ": $" + num_fries * 2.00);
+                document.write("Fries x $" + num_fries + ": $" + (num_fries * 2.00).toFixed(2) + "</br>");
             }
             if (num_sodas != 0){
-                document.write("Sodas x $" + num_sodas + ": $" + num_sodas * 1.80);
+                document.write("Sodas x $" + num_sodas + ": $" + (num_sodas * 1.80).toFixed(2) + "</br>");
             }
             
-            document.write("Subtotal: $" + subtotal);
+            document.write("Subtotal: $" + subtotal.toFixed(2) + "</br>");
             if (discount){
-                document.write("Discount: -$" + subtotal * 0.1);
+                document.write("Discount: -$" + (subtotal * 0.1).toFixed(2) + "</br>");
             }
-            document.write("Tax: $" + tax);
-            document.write("Total: $" + total);
+            document.write("Tax: $" + tax.toFixed(2) + "</br>");
+            document.write("Total: $" + total.toFixed(2) + "</br>" + "Your order will be ready in 10 minutes!");
         </script>
     </body>
 </html>
