@@ -9,38 +9,46 @@
         <h1>Joe's Hotdog Stand</h1>
         <h2>Your order:</h2>
         <script language="javascript">
+            // Input
             let num_hotdogs = parseInt(prompt("How many hotdogs do you want?" , "0"));
             let num_fries = parseInt(prompt("How many orders of fries do you want?" , "0"));
             let num_sodas = parseInt(prompt("How many sodas do you want?" , "0"));
 
-            let subtotal = (num_hotdogs * 3.75) + (num_fries * 2.00) + (num_sodas * 1.80);
 
+            // Calculations
+            let subtotal = (num_hotdogs * 3.75) + (num_fries * 2.00) + (num_sodas * 1.80);
             let total = subtotal;
             let discount = false;
             if ( subtotal >= 20.00 ){
                 total = subtotal * 0.9;
                 discount = true;
             }
-
             tax = 0.0625 * total;
             total = total + tax;
 
-            if (num_hotdogs != 0){
-                document.write("Hotdog x" + num_hotdogs + ": $" + (num_hotdogs * 3.75).toFixed(2) + "</br>");
-            }
-            if (num_fries != 0){
-                document.write("Fries x" + num_fries + ": $" + (num_fries * 2.00).toFixed(2) + "</br>");
-            }
-            if (num_sodas != 0){
-                document.write("Sodas x" + num_sodas + ": $" + (num_sodas * 1.80).toFixed(2) + "</br>");
-            }
             
-            document.write("Subtotal: $" + subtotal.toFixed(2) + "</br>");
-            if (discount){
-                document.write("Discount: -$" + (subtotal * 0.1).toFixed(2) + "</br>");
+            // Output
+            if (num_sodas + num_fries + num_hotdogs != 0){
+                document.write("<div><ul>");
+                if (num_hotdogs != 0){
+                    document.write("<li>Hotdog x" + num_hotdogs + ": $" + (num_hotdogs * 3.75).toFixed(2) + "</li>");
+                }
+                if (num_fries != 0){
+                    document.write("<li>Fries x" + num_fries + ": $" + (num_fries * 2.00).toFixed(2) + "</li>");
+                }
+                if (num_sodas != 0){
+                    document.write("<li>Sodas x" + num_sodas + ": $" + (num_sodas * 1.80).toFixed(2) + "</li>");
+                }
+                document.write("<li>Subtotal: $" + subtotal.toFixed(2) + "</li>");
+                if (discount){
+                    document.write("<li>Discount for order over $20: -$" + (subtotal * 0.1).toFixed(2) + "</li>");
+                }
+                document.write("<li>Tax: $" + tax.toFixed(2) + "</li>");
+                document.write("<li>Total: $" + total.toFixed(2) + "</li></ul></div>");
+                document.write("Your order will be ready in 10 minutes! Thank you for choosing Joe's Hotdog Stand.");
+            }else{
+                document.write("You must select at least one item!");
             }
-            document.write("Tax: $" + tax.toFixed(2) + "</br>");
-            document.write("Total: $" + total.toFixed(2) + "</br>" + "Your order will be ready in 10 minutes!");
         </script>
     </body>
 </html>
