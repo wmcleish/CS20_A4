@@ -1,1 +1,1 @@
-# CS20 Assignment 4 - XML Song Sheet
+# CS20 Assignment 4 - Joe's Hotdog Stand
