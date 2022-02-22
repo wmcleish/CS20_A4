@@ -1,11 +1,13 @@
 h1 {
     font-size: 48px;
     background-color: rgb(196, 23, 23);
-    color: yellow;
-    font-family: "Brush Script M7";
+    color: rgb(255, 208, 0);
+    font-family: "Brush Script MT";
+    text-align: center;
 }
 
 body {
-    background-color: rgb(88, 0, 0);
+    background-color: rgb(255, 208, 0);
     font-family: "Arial";
+    text-align: center;
 }
